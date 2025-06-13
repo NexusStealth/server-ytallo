@@ -1,0 +1,7 @@
+tunnel: server-ytallo
+credentials-file: /data/data/com.termux/files/home/.cloudflared/server-ytallo.json
+
+ingress:
+  - hostname: server-ytallo.app
+    service: http://localhost:3000
+  - service: http_status:404
