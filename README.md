@@ -2,7 +2,7 @@
 *Sistema completo com upload, IA (Groq), deploy de sites HTML e painel com suporte ao Termux e Firebase*
 
 ![Status](https://img.shields.io/badge/status-100%25%20pronto-brightgreen) 
-![Supports](https://instagram.com/levi_oliveira86)
+![Supports](https://img.shields.io/badge/supports-Termux%20%7C%20PC%20%7C%20Node-orange)
 
 ## 🚀 Como rodar
 
