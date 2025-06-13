@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login com Google - Server Ytallo</title>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDkCD-eJvF7YKhKDFNczLf6Jsw0q6R1j3s",
+      authDomain: "server-ytallo.firebaseapp.com",
+      projectId: "server-ytallo",
+      storageBucket: "server-ytallo.appspot.com",
+      messagingSenderId: "1071054631683",
+      appId: "1:1071054631683:web:f3fe9f48a949b1833a9c92"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>Login com Google</h2>
+    <button onclick="logarGoogle()">Entrar com Google</button>
+  </div>
+
+  <script>
+    function logarGoogle() {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+          const user = result.user;
+          fetch('/auth/google-callback', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              nome: user.displayName,
+              email: user.email,
+              uid: user.uid
+            })
+          }).then(() => {
+            window.location.href = '/dashboard';
+          });
+        })
+        .catch((error) => {
+          alert('Erro no login: ' + error.message);
+        });
+    }
+  </script>
+</body>
+</html>
