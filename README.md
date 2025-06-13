@@ -1,3 +1,9 @@
+# Server-Ytallo 🚀  
+*Sistema completo com upload, IA (Groq), deploy de sites HTML e painel com suporte ao Termux e Firebase*
+
+![Status](https://img.shields.io/badge/status-100%25%20pronto-brightgreen) 
+![Supports](https://instagram.com/levi_oliveira86)
+
 ## 🚀 Como rodar
 
 ### 1. Configurar variáveis de ambiente
