@@ -17,6 +17,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use('/', require('./routes/pages'));
+app.use('/auth', require('./routes/auth'));
 app.use('/upload', uploadRoute);
 app.use('/deploy', deployRoute);
 app.use('/ia', iaRoute);
